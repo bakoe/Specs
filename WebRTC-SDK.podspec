@@ -16,6 +16,9 @@ Pod::Spec.new do |spec|
     spec.osx.deployment_target = '10.15'
     spec.tvos.deployment_target = '17'
   
+    spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  
     spec.source       = { :http => "https://github.com/webrtc-sdk/Specs/releases/download/125.6422.07/WebRTC.xcframework.zip" }
     spec.vendored_frameworks = "WebRTC.xcframework"
     
